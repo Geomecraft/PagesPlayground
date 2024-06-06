@@ -1,4 +1,5 @@
 fetch("https://apis.indeed.com/graphql?locale=en-CA&co=CA", {
+    method: "POST",
     headers: {
         "Content-Type": "application/json",
         "Indeed-Api-Key": "0f2b0de1b8ff96890172eeeba0816aaab662605e3efebbc0450745798c4b35ae"
