@@ -5,7 +5,7 @@
       {
         "id": "favorite-widget-color",
         "type": "text",
-        "question": "What is your favorite widget color?lolololol<>/\"\\"
+        "question": "What lol?"
       },
       {
         "id": "org-annual-widget-volume",
@@ -20,7 +20,7 @@
         "required": true,
         "format": "integer",
         "min": 0,
-        "max": 100
+        "max": 2629
       },
       {
         "id": "widget-passion",
