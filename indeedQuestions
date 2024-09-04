@@ -1,0 +1,200 @@
+{
+  "schemaVersion": "1.0",
+  "screenerQuestions": {
+    "questions": [
+      {
+        "id": "favorite-widget-color",
+        "type": "text",
+        "question": "What is your favorite widget color?"
+      },
+      {
+        "id": "org-annual-widget-volume",
+        "type": "text",
+        "question": "What are the last four digits of your social security number??",
+        "format": "numeric_text"
+      },
+      {
+        "id": "last-four-social-security",
+        "type": "text",
+        "question": "How many widgets can you craft in an hour?",
+        "required": true,
+        "format": "integer",
+        "min": 0,
+        "max": 100
+      },
+      {
+        "id": "widget-passion",
+        "type": "textarea",
+        "question": "What makes you passionate about widget crafting?"
+      },
+      {
+        "id": "widget-crafting-license",
+        "type": "select",
+        "question": "Do you have a widget crafting license issued by the Widget Organization for Widgets?",
+        "required": true,
+        "options": [
+          {
+            "label": "false",
+            "value": "0"
+          },
+          {
+            "label": "true",
+            "value": "1"
+          }
+        ],
+        "qualification": {
+          "type": "non-blocking",
+          "match": {
+            "values": [
+              "1"
+            ],
+            "type": "any"
+          }
+        }
+      },
+      {
+        "id": "widget-crafting-license-certifications",
+        "type": "multiselect",
+        "question": "Please select all certifications on your widget crafting license.",
+        "required": true,
+        "options": [
+          {
+            "label": "Wooden Widget Certification",
+            "value": "0"
+          },
+          {
+            "label": "Plastic Widget Certification",
+            "value": "1"
+          },
+          {
+            "label": "Quantum Foam Widget Certification",
+            "value": "3"
+          }
+        ],
+        "condition": {
+          "id": "widget-crafting-license",
+          "value": "1"
+        },
+        "qualification": {
+          "type": "non-blocking",
+          "match": {
+            "values": [
+              "0",
+              "1"
+            ],
+            "type": "all"
+          }
+        }
+      },
+      {
+        "id": "widget-crafting-state",
+        "type": "hierarchical",
+        "question": "What is the most recent US state, city, and zip code in which you've crafted widgets?",
+        "options": [
+          {
+            "label": "California",
+            "value": "0"
+          },
+          {
+            "label": "Texas",
+            "value": "1"
+          }
+        ],
+        "hierarchicalOptions": [
+          {
+            "id": "cali-cities",
+            "options": [
+              {
+                "label": "SanFrancisco",
+                "value": "0"
+              }
+            ],
+            "condition": {
+              "id": "widget-crafting-state",
+              "value": "0"
+            }
+          },
+          {
+            "id": "texas-cities",
+            "options": [
+              {
+                "label": "San Antonio",
+                "value": "0"
+              },
+              {
+                "label": "Austin",
+                "value": "1"
+              }
+            ],
+            "condition": {
+              "id": "widget-crafting-state",
+              "value": "1"
+            }
+          },
+          {
+            "id": "san-antonio-zips",
+            "options": [
+              {
+                "label": "78212",
+                "value": "0"
+              },
+              {
+                "label": "78209",
+                "value": "1"
+              }
+            ],
+            "condition": {
+              "id": "texas-cities",
+              "value": "0"
+            }
+          }
+        ]
+      },
+      {
+        "id": "widget-crafting-license-expiration",
+        "type": "date",
+        "question": "When does your widget crafting license expire?",
+        "required": true,
+        "format": "dd/MM/yyyy",
+        "condition": {
+          "id": "widget-crafting-license",
+          "value": "1"
+        }
+      },
+      {
+        "id": "favorite-widget-pic",
+        "type": "file",
+        "question": "Please upload a picture of your most handsomely crafted widget."
+      },
+      {
+        "id": "page-1",
+        "type": "pagebreak"
+      },
+      {
+        "id": "strange-widget-disclosure",
+        "type": "information",
+        "text": "The widgets we produce are sometimes flavored strange. By applying to this job you agree that you are comfortable crafting strange flavored widgets."
+      }
+    ]
+  },
+  "demographicQuestions": {
+    "questions": [
+      {
+        "id": "disabilities",
+        "type": "select",
+        "question": "Do you have a disability?",
+        "options": [
+          {
+            "label": "false",
+            "value": "0"
+          },
+          {
+            "label": "true",
+            "value": "1"
+          }
+        ],
+        "required": false
+      }
+    ]
+  }
+}
