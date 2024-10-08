@@ -1,0 +1,25 @@
+<head>
+    <style>
+        #target_website {
+            position:relative;
+            width:2000px;
+            height:2000px;
+            opacity:0.00001;
+            z-index:2;
+        }
+        #decoy_website {
+            position:absolute;
+            width:300px;
+            height:400px;
+            z-index:1;
+        }
+    </style>
+</head>
+...
+<body>
+<div id="decoy_website">
+    ...decoy web content here...
+</div>
+<iframe id="target_website" height=1000 width =1000 src="https://www.youtube.com/embed/PCsiJ_fasDk">
+</iframe>
+</body>
